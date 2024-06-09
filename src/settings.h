@@ -319,6 +319,14 @@ public:
     int slideshowTransitionSoftness(int defaultTransitionSoftness) const;
     void setSlideshowTransitionSoftness(int transitionSoftness);
 
+    // Subtitles
+    void setSubtitlesShowColumn(const QString &column, bool b);
+    bool subtitlesShowColumn(const QString &column) const;
+    void setSubtitlesTrackTimeline(bool b);
+    bool subtitlesTrackTimeline() const;
+    void setSubtitlesShowPrevNext(bool b);
+    bool subtitlesShowPrevNext() const;
+
 public slots:
     void reset();
 

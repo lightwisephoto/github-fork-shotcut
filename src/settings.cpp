@@ -1264,6 +1264,36 @@ void ShotcutSettings::setSlideshowTransitionSoftness(int transitionSoftness)
     settings.setValue("slideshow/transitionSoftness", transitionSoftness);
 }
 
+void ShotcutSettings::setSubtitlesShowColumn(const QString &column, bool b)
+{
+    settings.setValue("subtitles/columns/" + column, b);
+}
+
+bool ShotcutSettings::subtitlesShowColumn(const QString &column) const
+{
+    return settings.value("subtitles/columns/" + column, true).toBool();
+}
+
+void ShotcutSettings::setSubtitlesTrackTimeline(bool b)
+{
+    settings.setValue("subtitles/trackTimeline", b);
+}
+
+bool ShotcutSettings::subtitlesTrackTimeline() const
+{
+    return settings.value("subtitles/trackTimeline", true).toBool();
+}
+
+void ShotcutSettings::setSubtitlesShowPrevNext(bool b)
+{
+    settings.setValue("subtitles/showPrevNext", b);
+}
+
+bool ShotcutSettings::subtitlesShowPrevNext() const
+{
+    return settings.value("subtitles/showPrevNext", true).toBool();
+}
+
 void ShotcutSettings::reset()
 {
     for (auto &key : settings.allKeys()) {
