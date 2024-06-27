@@ -33,13 +33,13 @@ Item {
     function setStatus(inProgress) {
         if (inProgress) {
             status.text = qsTr('Analyzing...');
-            results.text = "--";
+            results.displayText = "--";
         } else if (hasAnalysisCompleted()) {
             status.text = qsTr('Analysis complete.');
-            results.text = filter.get("results");
+            results.displayText = filter.get("results");
         } else {
             status.text = _analysisRequiredMessage;
-            results.text = "--";
+            results.displayText = "--";
         }
     }
 
@@ -253,8 +253,9 @@ Item {
             }
         }
 
-        Label {
+        TextField {
             id: results
+            readOnly: true
 
             Layout.columnSpan: 2
         }
